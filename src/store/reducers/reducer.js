@@ -9,8 +9,9 @@ const reducer = (state = initialState, action) => {
     case actionTypes.ADD_PERSON:
       const newPerson = {
         id: Math.random(), // not really unique but good enough here!
-        name: 'David',
-        age: Math.floor(Math.random() * 60)
+        name: action.payload.name,
+        // age: Math.floor(Math.random() * 60)
+        age: action.payload.age
       };
       return { ...state, persons: state.persons.concat(newPerson) };
     case actionTypes.DELETE_PERSON:
@@ -21,16 +22,3 @@ const reducer = (state = initialState, action) => {
 };
 
 export default reducer;
-
-// this.setState(prevState => {
-//   return { persons: prevState.persons.filter(person => person.id !== personId) };
-// });
-
-// const newPerson = {
-//   id: Math.random(), // not really unique but good enough here!
-//   name: 'Max',
-//   age: Math.floor(Math.random() * 40)
-// };
-// this.setState(prevState => {
-//   return { persons: prevState.persons.concat(newPerson) };
-// });
