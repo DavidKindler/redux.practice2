@@ -7,12 +7,16 @@
     "react-dom": "^16.2.1",
     "react-redux": "^5.0.6",
     "react-scripts": "3.4.1",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "snyk": "^1.317.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "eject": "react-scripts eject",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
+  },
+  "snyk": true
 }
